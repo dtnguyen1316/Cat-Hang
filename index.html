@@ -50,6 +50,7 @@ input.q,.res input,input.top{text-align:center;font:inherit;font-weight:700;colo
 input.q{width:80px;padding:6px;font-size:15px}
 input.top{width:74px;padding:4px 6px;margin-top:4px;display:block;margin-left:auto;margin-right:auto;font-size:13px}
 input.e{width:88px;padding:5px 4px;text-align:center;font:inherit;color:var(--tx);background:transparent;border:1.5px dashed transparent;border-radius:8px;transition:.15s}
+input.e.ll{width:56px}
 tr:hover input.e{border-color:var(--line)}
 input.e:focus{outline:none;border:1.5px solid var(--pri);background:var(--card);box-shadow:0 0 0 3px color-mix(in srgb,var(--pri) 22%,transparent)}
 input.e.chg{color:#d9730d;font-weight:700;border-color:#f6c28b;background:color-mix(in srgb,#f59e0b 10%,transparent)}
@@ -97,8 +98,9 @@ if(!st.__ltn){const sh=m=>{if(!m)return;const n={};for(const i in m)n[+i>=35?+i+
 let sheet=DATA[st.__last]?st.__last:KEYS[0];
 const save=()=>{try{localStorage.setItem('tole_v1',JSON.stringify(st))}catch(e){}};
 const cur=()=>DATA[sheet];
-const S=()=>{const s=st[sheet]||(st[sheet]={q:{},f:null,adj:1000});s.c=s.c||{};s.p=s.p||{};s.open=s.open||{};if(s.lop==null)s.lop='';return s};
-const LOP=i=>{const l=parseFloat(S().lop);return l>0?l:cur().rows[i][1]};
+const S=()=>{const s=st[sheet]||(st[sheet]={q:{},f:null,adj:1000});s.c=s.c||{};s.p=s.p||{};s.l=s.l||{};s.open=s.open||{};if(s.lop==null)s.lop='';return s};
+const BASEL=i=>{const l=parseFloat(S().lop);return l>0?l:cur().rows[i][1]};
+const LOP=i=>{const v=parseFloat(S().l[i]);return v>0?v:BASEL(i)};
 const COST=i=>{const v=parseFloat(S().c[i]);return isFinite(v)?v:cur().rows[i][2]};
 const PRICE=i=>{const v=parseFloat(S().p[i]);return isFinite(v)?v:cur().rows[i][3]};
 const fab=()=>{const s=S();if(!s.f||s.f.length!==cur().fabric.length)s.f=JSON.parse(JSON.stringify(cur().fabric));return s.f};
@@ -120,7 +122,7 @@ function renderTable(){
   rows.forEach((r,i)=>{
     const g=gi[i];
     if(grouped&&g!==last){last=g;html+=`<tr class="g" data-g="${g}"><td colspan="5"><span class="arr"></span>${r[0].replace(/\s*\d+$/,'')}</td><td class="r" id="gq-${g}"></td><td class="r" id="gp-${g}"></td></tr>`}
-    html+=`<tr data-i="${i}" data-g="${g}"><td>${r[0]}</td><td class="mutc" id="l${i}"></td>
+    html+=`<tr data-i="${i}" data-g="${g}"><td>${r[0]}</td><td><input class="e ll${S().l[i]!==undefined&&S().l[i]!==''?' chg':''}" type="text" inputmode="numeric" data-e="l" data-i="${i}" value="${fmtI(LOP(i))}"></td>
     <td><input class="e${S().c[i]!==undefined&&S().c[i]!==''?' chg':''}" type="text" inputmode="numeric" data-e="c" data-i="${i}" value="${fmtI(S().c[i]??r[2])}"></td>
     <td><input class="e${S().p[i]!==undefined&&S().p[i]!==''?' chg':''}" type="text" inputmode="numeric" data-e="p" data-i="${i}" value="${fmtI(S().p[i]??r[3])}"></td>
     <td><input class="q" type="number" min="0" step="any" inputmode="decimal" data-i="${i}" value="${q[i]??''}" placeholder="0"></td>
@@ -154,7 +156,6 @@ function calc(){
   rows.forEach((r,i)=>{
     const e=parseFloat(q[i])||0,qty=LOP(i)*e,c=COST(i),pr=PRICE(i),p=(pr-c)*qty,g=gi[i];
     n+=qty;rev+=qty*pr;sew+=qty*c;
-    $('#l'+i).textContent=LOP(i);
     $('#n'+i).textContent=qty?fmt(qty):'';$('#p'+i).textContent=qty?fmt(p):'';
     const tr=$(`tr[data-i="${i}"]`);tr.classList.toggle('act',e>0);tr.querySelector('input.q').classList.toggle('has',e>0);
     gq[g]=(gq[g]||0)+qty;gp[g]=(gp[g]||0)+p;
@@ -197,15 +198,15 @@ document.addEventListener('input',e=>{
   if(t.classList.contains('q'))s.q[t.dataset.i]=t.value;
   else if(t.dataset.f!==undefined)fab()[t.dataset.f][t.dataset.k]=t.value;
   else if(t.id==='adj')s.adj=t.value;
-  else if(t.id==='lop')s.lop=t.value;
-  else if(t.dataset.e){const m=t.dataset.e==='c'?s.c:s.p;
+  else if(t.id==='lop'){s.lop=t.value;s.l={};document.querySelectorAll('input[data-e="l"]').forEach(x=>{x.value=fmtI(BASEL(+x.dataset.i));x.classList.remove('chg')})}
+  else if(t.dataset.e){const m=t.dataset.e==='c'?s.c:t.dataset.e==='l'?s.l:s.p;
     const pos=t.selectionStart,digitsBefore=t.value.slice(0,pos).replace(/\D/g,'').length;
     const raw=t.value.replace(/\D/g,'');
     t.value=raw?(+raw).toLocaleString('vi-VN'):'';
     let np=0,c=0;while(np<t.value.length&&c<digitsBefore){if(/\d/.test(t.value[np]))c++;np++}
     try{t.setSelectionRange(np,np)}catch(_){}
     if(raw==='')delete m[t.dataset.i];else m[t.dataset.i]=raw;
-    const r=cur().rows[t.dataset.i],orig=t.dataset.e==='c'?r[2]:r[3];
+    const r=cur().rows[t.dataset.i],orig=t.dataset.e==='c'?r[2]:t.dataset.e==='l'?BASEL(t.dataset.i):r[3];
     t.classList.toggle('chg',raw!==''&&+raw!==orig);}
   else return;
   save();calc();
@@ -218,13 +219,13 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowUp'){e.preventDefault();(all[i-1]||e.target).focus()}
 });
 document.addEventListener('focusout',e=>{const t=e.target;
-  if(t.dataset&&t.dataset.e&&t.value===''){const r=cur().rows[t.dataset.i];t.value=fmtI(t.dataset.e==='c'?r[2]:r[3]);t.classList.remove('chg')}});
+  if(t.dataset&&t.dataset.e&&t.value===''){const r=cur().rows[t.dataset.i];t.value=fmtI(t.dataset.e==='c'?r[2]:t.dataset.e==='l'?BASEL(t.dataset.i):r[3]);t.classList.remove('chg')}});
 $('#only').onchange=filter;
 document.addEventListener('click',e=>{const tr=e.target.closest('tr.g');if(!tr)return;
   const o=S().open,g=tr.dataset.g;o[g]=!o[g];save();filter()});
 $('#toggleall').onclick=()=>{const gs=[...new Set(GI(cur().rows))],o=S().open,allOpen=gs.every(g=>o[g]);
   gs.forEach(g=>o[g]=!allOpen);save();filter()};
-$('#resetp').onclick=()=>{const s=S();s.c={};s.p={};s.lop='';save();renderTable();calc()};
+$('#resetp').onclick=()=>{const s=S();s.c={};s.p={};s.l={};s.lop='';save();renderTable();calc()};
 $('#clear').onclick=()=>{if(confirm(`Xóa toàn bộ số "Xuất hiện" của ${cur().cat} – ${cur().label}?`)){S().q={};save();renderTable();calc()}};
 renderAll();
 </script></body></html>
