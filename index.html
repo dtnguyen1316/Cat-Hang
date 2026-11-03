@@ -18,10 +18,10 @@ h1{font-size:19px;margin:0;font-weight:700}
 .tools label{display:flex;gap:6px;align-items:center;cursor:pointer}
 .btn{border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.15);color:#fff;padding:7px 14px;border-radius:9px;font:inherit;cursor:pointer}
 .btn:hover{background:rgba(255,255,255,.3)}
-.subs{display:flex;gap:8px;flex-wrap:wrap;padding:12px 24px 0;max-width:1500px;margin:auto}
+.subs{display:flex;gap:8px;flex-wrap:wrap;padding:12px 24px 0;max-width:1350px;margin:auto}
 .subs button{border:1.5px solid var(--line);background:var(--card);color:var(--mut);padding:7px 18px;border-radius:999px;font:inherit;cursor:pointer;font-weight:600}
 .subs button.on{border-color:var(--pri);color:var(--pri);background:var(--hl)}
-main{display:grid;grid-template-columns:minmax(0,1fr) 410px;gap:18px;padding:14px 24px 18px;max-width:1500px;margin:auto;align-items:start}
+main{display:grid;grid-template-columns:minmax(0,1fr) 410px;gap:18px;padding:14px 24px 18px;max-width:1350px;margin:auto;align-items:start}
 @media(max-width:900px){main{grid-template-columns:1fr;padding:12px}.res{order:-1;position:static!important}.subs{padding:10px 12px 0}}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 6px 24px rgba(60,70,140,.08)}
 .res{position:sticky;top:14px}
@@ -32,12 +32,12 @@ main{display:grid;grid-template-columns:minmax(0,1fr) 410px;gap:18px;padding:14p
 .kpi b{font-size:22px}
 .pos{color:var(--pos)}.neg{color:var(--neg)}
 table{width:100%;border-collapse:collapse}
-th,td{padding:7px 6px;text-align:center;border-bottom:1px solid var(--line);white-space:nowrap}
+th,td{padding:7px 10px;text-align:center;border-bottom:1px solid var(--line);white-space:nowrap}
 th:first-child,td:first-child{text-align:left}
 thead th{position:sticky;top:0;background:var(--card);color:var(--mut);font-weight:600;font-size:12px;z-index:1}
 .wrap{max-height:none;overflow:visible}
 main>.card{overflow:visible}
-@media(max-width:1300px){.wrap{overflow-x:auto}main>.card{overflow:hidden}}
+@media(max-width:900px){.wrap{overflow-x:auto}main>.card{overflow:hidden}}
 tr.g td{background:var(--hl);font-weight:700;color:var(--pri);text-align:left}
 tr.g td.r{text-align:center}
 tr.g{cursor:pointer;user-select:none}
@@ -47,9 +47,9 @@ tr.act td{background:color-mix(in srgb,var(--okb) 9%,transparent)}
 input[type=number]{-moz-appearance:textfield;appearance:textfield}
 input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 input.q,.res input,input.top{text-align:center;font:inherit;font-weight:700;color:var(--inc);background:var(--in);border:2px solid var(--inb);border-radius:9px;transition:.15s}
-input.q{width:72px;padding:6px;font-size:15px}
+input.q{width:80px;padding:6px;font-size:15px}
 input.top{width:74px;padding:4px 6px;margin-top:4px;display:block;margin-left:auto;margin-right:auto;font-size:13px}
-input.e{width:80px;padding:5px 4px;text-align:center;font:inherit;color:var(--tx);background:transparent;border:1.5px dashed transparent;border-radius:8px;transition:.15s}
+input.e{width:88px;padding:5px 4px;text-align:center;font:inherit;color:var(--tx);background:transparent;border:1.5px dashed transparent;border-radius:8px;transition:.15s}
 tr:hover input.e{border-color:var(--line)}
 input.e:focus{outline:none;border:1.5px solid var(--pri);background:var(--card);box-shadow:0 0 0 3px color-mix(in srgb,var(--pri) 22%,transparent)}
 input.e.chg{color:#d9730d;font-weight:700;border-color:#f6c28b;background:color-mix(in srgb,#f59e0b 10%,transparent)}
@@ -63,222 +63,47 @@ input.q::placeholder{color:var(--inb);font-weight:500}
 .res h3{margin:16px 0 6px;font-size:13px;color:var(--mut);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .tot td{font-weight:700;font-size:15px;border-top:2px solid var(--line)}
 .mut{color:var(--mut)}
-.hide,.col{display:none}
-
-.lotbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 24px 0;max-width:1500px;margin:auto}
-.lotl{display:flex;gap:6px;align-items:center;font-weight:600;color:var(--mut)}
-.lotbar select{font:inherit;padding:6px 10px;border-radius:9px;border:1.5px solid var(--line);background:var(--card);color:var(--tx);font-weight:600;max-width:220px}
-.tb{border:1.5px solid var(--line);background:var(--card);color:var(--tx);padding:6px 12px;border-radius:9px;font:inherit;font-size:13px;cursor:pointer}
-.tb:hover{border-color:var(--pri);color:var(--pri)}
-.sp{flex:1}
-.bar{padding:10px 12px;border-bottom:1px solid var(--line)}
-.bar input{width:100%;padding:8px 12px;font:inherit;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--tx)}
-.bar input:focus{outline:none;border-color:var(--pri)}
-.gh{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.gbs{display:flex;gap:6px}
-.gb{font-size:11px;font-weight:600;padding:2px 9px;border:1px solid var(--pri);border-radius:999px;color:var(--pri);background:var(--card);cursor:pointer;white-space:nowrap}
-.gb:hover{background:var(--pri);color:#fff}
-input.e.mm{width:60px}
-.lc.loss{color:var(--neg);font-weight:700;background:color-mix(in srgb,var(--neg) 14%,transparent)}
-.lc.low{color:#d97706;font-weight:700;background:color-mix(in srgb,#f59e0b 18%,transparent)}
-.thr{width:48px;padding:3px 4px;border-radius:7px;border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.15);color:#fff;font:inherit;text-align:center}
-.need{margin:10px 0 0;padding:8px 10px;border:1.5px dashed var(--inb);border-radius:10px;font-size:13px;display:none}
-.need .tb{margin-top:6px;display:block}
-#mbar{display:none}
-dialog{background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:14px;padding:16px;max-width:95vw;width:820px}
-dialog::backdrop{background:rgba(10,12,30,.5)}
-.dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:16px}
-#cmpbody{overflow-x:auto}
-#cmpbody tr.cur td{background:var(--hl);font-weight:700}
-.cmpn{color:var(--mut);font-size:12px;margin:8px 0 0}
-@media(max-width:900px){
- #mbar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;justify-content:space-around;gap:6px;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.12);cursor:pointer}
- #mbar span{display:flex;flex-direction:column;align-items:center}
- #mbar small{color:var(--mut);font-size:11px}#mbar b{font-size:14px}
- body{padding-bottom:64px}.lotbar{padding:10px 12px 0}
-}
-@media print{
- :root{--bg:#fff;--card:#fff;--tx:#000;--mut:#555;--line:#ccc;--pri:#333;--pos:#0a7a4f;--neg:#c00;--hl:#eee;--in:#fff;--inb:#999;--inc:#000;--ok:#fff;--okb:#999;--okc:#000}
- body{background:#fff}
- header{background:none;color:#000;box-shadow:none;padding:6px 0}
- header .tools,.cats,.lotbar,.subs,.bar,#mbar,.gbs,.arr,.need .tb{display:none!important}
- main{display:block;padding:0}.res{position:static}.card{box-shadow:none}
- .wrap{max-height:none;overflow:visible}thead th{position:static}
- tr.noq{display:none!important}tr.col:not(.noq){display:table-row!important}
- input{border:0!important;background:none!important}
-}
+.hide{display:none}
 </style></head><body>
 <header>
   <h1>🧵 Tính lợi nhuận Tole</h1>
   <div class="cats" id="cats"></div>
   <div class="tools">
     <label><input type="checkbox" id="only"> Chỉ hiện dòng đã nhập</label>
-    <label title="Dòng có tỷ suất thấp hơn mức này sẽ tô vàng">Lời thấp &lt; <input class="thr" type="number" id="thr" min="0" step="1">%</label>
     <button class="btn" id="toggleall">Bung/Thu tất cả</button>
     <button class="btn" id="resetp">Đặt lại giá gốc</button>
     <button class="btn" id="clear">Xóa số đã nhập</button>
   </div>
 </header>
-<div class="lotbar">
-  <label class="lotl">Lô hàng <select id="lot"></select></label>
-  <button class="tb" id="lotnew">＋ Lô mới</button><button class="tb" id="lotdup">⧉ Nhân bản</button><button class="tb" id="lotren">✎ Đổi tên</button><button class="tb" id="lotdel">🗑 Xóa lô</button><button class="tb" id="lotcmp">📊 So sánh lô</button>
-  <span class="sp"></span>
-  <button class="tb" id="exp">⬇ Xuất file</button><button class="tb" id="imp">⬆ Nhập file</button><input type="file" id="impf" accept=".json,application/json" hidden><button class="tb" id="img">🖼 Lưu ảnh</button><button class="tb" id="prn">🖨 In / PDF</button>
-</div>
 <div class="subs" id="subs"></div>
 <main>
-  <div class="card"><div class="bar"><input id="search" type="search" placeholder="🔍 Tìm loại đồ (vd: LTN 8, babydoll, đùi tn…)"></div><div class="wrap"><table>
-    <thead><tr><th>Loại đồ</th><th>Số lớp<input class="top" id="lop" type="number" min="1" placeholder="Tất cả" title="Nhập 1 số, áp dụng cho mọi dòng"></th><th>Chi phí/bộ</th><th>Giá bán/bộ</th><th title="Định mức vải mỗi bộ, cùng đơn vị với Số lượng vải">Vải/bộ</th><th title="Giá bán − chi phí may − vải (nếu có định mức, tính theo đơn giá vải Phương án 1)">Lời/bộ</th><th>Tỷ suất</th><th>Xuất hiện</th><th>Số lượng</th><th id="lastth">Lợi (sau CP)</th></tr></thead>
+  <div class="card"><div class="wrap"><table>
+    <thead><tr><th>Loại đồ</th><th>Số lớp<input class="top" id="lop" type="number" min="1" placeholder="Tất cả" title="Nhập 1 số, áp dụng cho mọi dòng"></th><th>Chi phí/bộ</th><th>Giá bán/bộ</th><th>Xuất hiện</th><th>Số lượng</th><th id="lastth">Lợi (sau CP)</th></tr></thead>
     <tbody id="body"></tbody></table></div></div>
   <aside class="res"><div class="card" id="res"></div></aside>
 </main>
-<div id="mbar"></div>
-<dialog id="cmp"><div class="dh"><b>📊 So sánh các lô hàng</b><button class="tb" id="cmpx">Đóng</button></div><div id="cmpbody"></div></dialog>
-
 <script>
 const DATA={"Gái ko nút":{"cat":"Tole Bé","label":"Gái thường","type":"be","rows":[["TD0",110.0,8000.0,26000.0],["TD1",110.0,8000.0,27000.0],["TD2",110.0,8000.0,28000.0],["TD3",110.0,8000.0,29000.0],["TD4",110.0,8000.0,30000.0],["TD5",110.0,8000.0,31000.0],["TD6",110.0,8000.0,32000.0],["TD7",110.0,8000.0,34000.0],["TD8",110.0,8500.0,36000.0],["TD9",110.0,8500.0,38000.0],["TD10",110.0,8500.0,40000.0],["TD11",110.0,8500.0,42000.0],["TD12",110.0,8500.0,44000.0],["TD13",110.0,8500.0,47000.0],["TD14",110.0,8500.0,49000.0],["TD15",110.0,8500.0,51000.0],["L0",110.0,8000.0,20000.0],["L1",110.0,8000.0,21000.0],["L2",110.0,8000.0,22000.0],["L3",110.0,8000.0,23000.0],["L4",110.0,8000.0,24000.0],["L5",110.0,8000.0,25000.0],["L6",110.0,8000.0,26000.0],["L7",110.0,8000.0,28000.0],["L8",110.0,8500.0,30000.0],["L9",110.0,8500.0,32000.0],["L10",110.0,8500.0,34000.0],["L11",110.0,8500.0,36000.0],["L12",110.0,8500.0,38000.0],["L13",110.0,8500.0,41000.0],["L14",110.0,8500.0,43000.0],["L15",110.0,8500.0,45000.0],["L16",110.0,8500.0,48000.0],["L17",110.0,8500.0,51000.0],["L18",110.0,8500.0,54000.0],["LTN0",110.0,8000.0,22000.0],["LTN1",110.0,8000.0,23000.0],["LTN2",110.0,8000.0,24000.0],["LTN3",110.0,8000.0,25000.0],["LTN4",110.0,8000.0,26000.0],["LTN5",110.0,8000.0,27000.0],["LTN6",110.0,8000.0,28000.0],["LTN7",110.0,8000.0,30000.0],["LTN8",110.0,8500.0,32000.0],["LTN9",110.0,8500.0,34000.0],["LTN10",110.0,8500.0,36000.0],["LTN11",110.0,8500.0,38000.0],["LTN12",110.0,8500.0,40000.0],["LTN13",110.0,8500.0,43000.0],["LTN14",110.0,8500.0,45000.0],["LTN15",110.0,8500.0,47000.0],["LTN16",110.0,8500.0,50000.0],["DNT0",110.0,8000.0,24000.0],["DNT1",110.0,8000.0,25000.0],["DNT2",110.0,8000.0,26000.0],["DNT3",110.0,8000.0,27000.0],["DNT4",110.0,8000.0,28000.0],["DNT5",110.0,8000.0,29000.0],["DNT6",110.0,8000.0,30000.0],["DNT7",110.0,8000.0,32000.0],["DNT8",110.0,8500.0,34000.0],["DNT9",110.0,8500.0,36000.0],["DNT10",110.0,8500.0,38000.0],["DNT11",110.0,8500.0,40000.0],["DNT12",110.0,8500.0,42000.0],["DNT13",110.0,8500.0,45000.0],["DNT14",110.0,8500.0,47000.0],["DNT15",110.0,8500.0,49000.0],["ĐÙI TN0",110.0,8000.0,23000.0],["ĐÙI TN1",110.0,8000.0,24000.0],["ĐÙI TN2",110.0,8000.0,25000.0],["ĐÙI TN3",110.0,8000.0,26000.0],["ĐÙI TN4",110.0,8000.0,27000.0],["ĐÙI TN5",110.0,8000.0,28000.0],["ĐÙI TN6",110.0,8000.0,29000.0],["ĐÙI TN7",110.0,8000.0,31000.0],["ĐÙI TN8",110.0,8500.0,33000.0],["ĐÙI TN9",110.0,8500.0,35000.0],["ĐÙI TN10",110.0,8500.0,37000.0],["ĐÙI TN11",110.0,8500.0,39000.0],["ĐÙI TN12",110.0,8500.0,41000.0],["Babydoll Đùi TN0",110.0,8500.0,26000.0],["Babydoll Đùi TN1",110.0,8500.0,27000.0],["Babydoll Đùi TN2",110.0,8500.0,28000.0],["Babydoll Đùi TN3",110.0,8500.0,29000.0],["Babydoll Đùi TN4",110.0,8500.0,30000.0],["Babydoll Đùi TN5",110.0,8500.0,31000.0],["Babydoll Đùi TN6",110.0,8500.0,32000.0],["Babydoll Đùi TN7",110.0,8500.0,34000.0],["Babydoll Đùi TN8",110.0,9000.0,36000.0],["Babydoll Đùi TN9",110.0,9000.0,38000.0],["Babydoll Đùi TN10",110.0,9000.0,40000.0],["Babydoll Đùi TN11",110.0,9000.0,42000.0],["Babydoll Đùi TN12",110.0,9000.0,44000.0],["Babydoll Dài TD0",110.0,8000.0,29000.0],["Babydoll Dài TD1",110.0,8000.0,30000.0],["Babydoll Dài TD2",110.0,8000.0,31000.0],["Babydoll Dài TD3",110.0,8000.0,32000.0],["Babydoll Dài TD4",110.0,8000.0,33000.0],["Babydoll Dài TD5",110.0,8000.0,34000.0],["Babydoll Dài TD6",110.0,8000.0,35000.0],["Babydoll Dài TD7",110.0,8000.0,37000.0],["Babydoll Dài TD8",110.0,8500.0,39000.0],["Babydoll Dài TD9",110.0,8500.0,41000.0],["Babydoll Dài TD10",110.0,8500.0,43000.0],["Babydoll Dài TD11",110.0,8500.0,45000.0],["Babydoll Dài TD12",110.0,8500.0,47000.0],["Babydoll Dài TD13",110.0,8500.0,50000.0],["Babydoll Dài TD14",110.0,8500.0,52000.0],["Babydoll Dài TD15",110.0,8500.0,54000.0]],"fabric":[[980.0,23000.0],[980.0,21000.0]]},"Trai":{"cat":"Tole Bé","label":"Trai","type":"be","rows":[["TD0",110.0,8500.0,26000.0],["TD1",110.0,8500.0,27000.0],["TD2",110.0,8500.0,28000.0],["TD3",120.0,8500.0,29000.0],["TD4",120.0,8500.0,30000.0],["TD5",120.0,8500.0,31000.0],["TD6",120.0,8500.0,32000.0],["TD7",120.0,8500.0,34000.0],["TD8",120.0,9000.0,36000.0],["TD9",120.0,9000.0,38000.0],["TD10",120.0,9000.0,40000.0],["TD11",110.0,9000.0,42000.0],["TD12",110.0,9000.0,44000.0],["TD13",110.0,9000.0,47000.0],["TD14",110.0,9000.0,49000.0],["TD15",110.0,9000.0,51000.0],["L0",110.0,8500.0,20000.0],["L1",110.0,8500.0,21000.0],["L2",110.0,8500.0,22000.0],["L3",110.0,8500.0,23000.0],["L4",110.0,8500.0,24000.0],["L5",110.0,8500.0,25000.0],["L6",110.0,8500.0,26000.0],["L7",110.0,8500.0,28000.0],["L8",110.0,9000.0,30000.0],["L9",110.0,9000.0,32000.0],["L10",110.0,9000.0,34000.0],["L11",110.0,9000.0,36000.0],["L12",110.0,9000.0,38000.0],["L13",110.0,9000.0,41000.0],["L14",110.0,9000.0,43000.0],["L15",110.0,9000.0,45000.0],["L16",110.0,9000.0,47000.0],["L17",110.0,9000.0,49000.0],["L18",110.0,9000.0,51000.0],["LTN0",110.0,8500.0,22000.0],["LTN1",110.0,8500.0,23000.0],["LTN2",110.0,8500.0,24000.0],["LTN3",110.0,8500.0,25000.0],["LTN4",110.0,8500.0,26000.0],["LTN5",110.0,8500.0,27000.0],["LTN6",110.0,8500.0,28000.0],["LTN7",110.0,8500.0,30000.0],["LTN8",110.0,9000.0,32000.0],["LTN9",110.0,9000.0,34000.0],["LTN10",110.0,9000.0,36000.0],["LTN11",110.0,9000.0,38000.0],["LTN12",110.0,9000.0,40000.0],["LTN13",110.0,9000.0,43000.0],["LTN14",110.0,9000.0,45000.0],["LTN15",110.0,9000.0,47000.0],["LTN16",110.0,9000.0,49000.0],["DNT0",110.0,8500.0,24000.0],["DNT1",110.0,8500.0,25000.0],["DNT2",110.0,8500.0,26000.0],["DNT3",110.0,8500.0,27000.0],["DNT4",110.0,8500.0,28000.0],["DNT5",110.0,8500.0,29000.0],["DNT6",110.0,8500.0,30000.0],["DNT7",110.0,8500.0,32000.0],["DNT8",110.0,9000.0,34000.0],["DNT9",110.0,9000.0,36000.0],["DNT10",110.0,9000.0,38000.0],["DNT11",110.0,9000.0,40000.0],["DNT12",110.0,9000.0,42000.0],["DNT13",110.0,9000.0,45000.0],["DNT14",110.0,9000.0,47000.0],["DNT15",110.0,9000.0,49000.0]],"fabric":[[980.0,23000.0],[980.0,20500.0]]},"Tole Lớn 2":{"cat":"Tole Lớn","label":"Tole Lớn","type":"be","flat":true,"rows":[["Đùi Lớn",110,12000,50000],["Tole Lớn Lửng CT",110,12500,59000],["Tole Lớn Dài CT",110,12500,59000],["Tole Lớn Dài TD, Lỡ",110,12500,70000],["Tole Lớn",110,12500,75000],["Babydoll Đùi TN",110,12500,60000],["Babydoll Dài TD",110,12500,80000]],"fabric":[[980.0,23000.0],[980.0,21000.0]]}};
 const $=s=>document.querySelector(s);
 const KEYS=Object.keys(DATA),CATS=[...new Set(KEYS.map(k=>DATA[k].cat))];
 const GI=rows=>{let k=-1,l=null;return rows.map(r=>{const n=r[0].replace(/\s*\d+$/,'');if(n!==l){l=n;k++}return k})};
-const gname=r=>r[0].replace(/\s*\d+$/,'');
 const fmt=n=>isFinite(n)?Math.round(n).toLocaleString('vi-VN'):'—';
 const cls=n=>n>=0?'pos':'neg';
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const clone=o=>JSON.parse(JSON.stringify(o));
-const fmtI=v=>(v===''||v==null||!isFinite(+v))?'':Math.round(+v).toLocaleString('vi-VN');
-const fmtD=v=>{if(v===''||v==null)return '';const n=+v;return isFinite(n)?n.toLocaleString('vi-VN',{maximumFractionDigits:6}):''};
-const parseMoney=v=>parseFloat(String(v).trim().replace(/[.\s]/g,'').replace(',','.'));
-const parseDec=v=>parseFloat(String(v).trim().replace(',','.'));
-const norm=x=>String(x).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/\s+/g,'');
-
-function fmtField(str,dec){
-  const v=String(str).replace(dec?/[^\d,]/g:/\D/g,'');
-  let ip=v,dp;
-  if(dec){const k=v.indexOf(',');if(k>=0){ip=v.slice(0,k);dp=v.slice(k+1).replace(/,/g,'')}}
-  ip=ip.replace(/^0+(?=\d)/,'');
-  const ipf=ip?Number(ip).toLocaleString('vi-VN'):(dp!==undefined?'0':'');
-  return {display:ipf+(dp!==undefined?','+dp:''),raw:(ip||dp)?(ip||'0')+(dp?'.'+dp:''):''};
-}
-function fmtInput(t,dec){
-  const re=dec?/[\d,]/:/\d/;
-  const pos=t.selectionStart==null?t.value.length:t.selectionStart;
-  let cnt=0;for(const ch of t.value.slice(0,pos))if(re.test(ch))cnt++;
-  const o=fmtField(t.value,dec);t.value=o.display;
-  let np=0,c=0;while(np<o.display.length&&c<cnt){if(re.test(o.display[np]))c++;np++}
-  try{t.setSelectionRange(np,np)}catch(_){}
-  return o.raw;
-}
-
 let st={};
 try{st=JSON.parse(localStorage.getItem('tole_v1')||'{}')}catch(e){}
 if(!st.__ltn){const sh=m=>{if(!m)return;const n={};for(const i in m)n[+i>=35?+i+17:i]=m[i];Object.keys(m).forEach(k=>delete m[k]);Object.assign(m,n)};
   ['Gái ko nút','Trai'].forEach(k=>{const x=st[k];if(!x)return;sh(x.q);sh(x.c);sh(x.p);const o={};for(const g in (x.open||{}))o[+g>=2?+g+1:g]=x.open[g];x.open=o});
   st.__ltn=1;try{localStorage.setItem('tole_v1',JSON.stringify(st))}catch(e){}}
-if(!st.__lots||!st.__lots[st.__lot]){st.__lots={L1:{name:'Lô 1',ts:Date.now(),data:{}}};st.__lot='L1'}
-if(st.__thr==null)st.__thr=10;
 let sheet=DATA[st.__last]?st.__last:KEYS[0];
 const save=()=>{try{localStorage.setItem('tole_v1',JSON.stringify(st))}catch(e){}};
 const cur=()=>DATA[sheet];
-const S=()=>{const s=st[sheet]||(st[sheet]={q:{},f:null,adj:1000});s.q=s.q||{};if(s.adj==null)s.adj=1000;s.c=s.c||{};s.p=s.p||{};s.m=s.m||{};s.open=s.open||{};if(s.lop==null)s.lop='';return s};
+const S=()=>{const s=st[sheet]||(st[sheet]={q:{},f:null,adj:1000});s.c=s.c||{};s.p=s.p||{};s.open=s.open||{};if(s.lop==null)s.lop='';return s};
 const LOP=i=>{const l=parseFloat(S().lop);return l>0?l:cur().rows[i][1]};
 const COST=i=>{const v=parseFloat(S().c[i]);return isFinite(v)?v:cur().rows[i][2]};
 const PRICE=i=>{const v=parseFloat(S().p[i]);return isFinite(v)?v:cur().rows[i][3]};
-const fab=()=>{const s=S();if(!s.f||s.f.length!==cur().fabric.length)s.f=clone(cur().fabric);return s.f};
-let lastNeed=0;
+const fab=()=>{const s=S();if(!s.f||s.f.length!==cur().fabric.length)s.f=JSON.parse(JSON.stringify(cur().fabric));return s.f};
+const fmtI=v=>(v===''||v==null||!isFinite(+v))?'':Math.round(+v).toLocaleString('vi-VN');
 
-/* ---------- Lô hàng ---------- */
-function stash(){const L=st.__lots[st.__lot];L.data={};KEYS.forEach(k=>{const s=st[k];if(s)L.data[k]={q:clone(s.q||{}),f:s.f?clone(s.f):null,adj:s.adj}})}
-function loadLot(id){st.__lot=id;const L=st.__lots[id];
-  KEYS.forEach(k=>{const s=st[k]||(st[k]={});const d=L.data&&L.data[k];s.q=d?clone(d.q||{}):{};s.f=d&&d.f?clone(d.f):null;s.adj=d&&d.adj!=null?d.adj:1000});
-  save();renderAll()}
-function renderLots(){
-  $('#lot').innerHTML=Object.entries(st.__lots).map(([id,L])=>`<option value="${id}"${id===st.__lot?' selected':''}>${esc(L.name)}</option>`).join('');
-}
-const lotCount=()=>Object.keys(st.__lots).length;
-$('#lot').onchange=e=>{stash();loadLot(e.target.value)};
-$('#lotnew').onclick=()=>{const name=prompt('Tên lô mới:','Lô '+(lotCount()+1));if(!name||!name.trim())return;
-  stash();const id='L'+Date.now().toString(36);st.__lots[id]={name:name.trim(),ts:Date.now(),data:{}};loadLot(id)};
-$('#lotdup').onclick=()=>{const L=st.__lots[st.__lot];const name=prompt('Tên bản sao:',L.name+' (bản sao)');if(!name||!name.trim())return;
-  stash();const id='L'+Date.now().toString(36);st.__lots[id]={name:name.trim(),ts:Date.now(),data:clone(L.data)};loadLot(id)};
-$('#lotren').onclick=()=>{const L=st.__lots[st.__lot];const name=prompt('Đổi tên lô:',L.name);if(!name||!name.trim())return;L.name=name.trim();save();renderLots()};
-$('#lotdel').onclick=()=>{if(lotCount()<2){alert('Phải còn ít nhất 1 lô.');return}
-  const L=st.__lots[st.__lot];if(!confirm(`Xóa lô "${L.name}"? Toàn bộ số lượng và vải của lô này sẽ mất.`))return;
-  delete st.__lots[st.__lot];loadLot(Object.keys(st.__lots)[0])};
-
-function calcSheet(key,q,f){
-  const d=DATA[key],s=st[key]||{},c=s.c||{},p=s.p||{},lv=parseFloat(s.lop),lo=lv>0?lv:null;
-  let n=0,rev=0,sew=0;
-  d.rows.forEach((r,i)=>{const e=parseFloat(q[i])||0;if(!e)return;
-    const qty=(lo||r[1])*e,cv=parseFloat(c[i]),pv=parseFloat(p[i]),cc=isFinite(cv)?cv:r[2],pr=isFinite(pv)?pv:r[3];
-    n+=qty;rev+=qty*pr;sew+=qty*cc});
-  return {n,rev,sew,pf:(f||d.fabric).map(fv=>rev-sew-(+fv[0]||0)*(+fv[1]||0))};
-}
-$('#lotcmp').onclick=()=>{
-  stash();
-  const rows=Object.entries(st.__lots).map(([id,L])=>{
-    let n=0,rev=0,sew=0;const pf=[0,0];
-    KEYS.forEach(k=>{const dd=L.data[k];if(!dd)return;const r=calcSheet(k,dd.q||{},dd.f);if(!r.n)return;n+=r.n;rev+=r.rev;sew+=r.sew;r.pf.forEach((v,i)=>pf[i]=(pf[i]||0)+v)});
-    return {id,L,n,rev,pf};
-  });
-  $('#cmpbody').innerHTML=`<table><thead><tr><th>Lô</th><th>Ngày tạo</th><th>Tổng bộ</th><th>Doanh thu</th><th>Lợi nhuận PA1</th><th>Lợi nhuận PA2</th><th>Lời/bộ (PA1)</th></tr></thead><tbody>`+
-   rows.map(r=>`<tr class="${r.id===st.__lot?'cur':''}"><td>${esc(r.L.name)}</td><td class="mutc">${new Date(r.L.ts).toLocaleDateString('vi-VN')}</td><td>${fmt(r.n)}</td><td>${fmt(r.rev)}</td><td class="${cls(r.pf[0])}">${fmt(r.pf[0])}</td><td class="${cls(r.pf[1])}">${fmt(r.pf[1])}</td><td>${r.n?fmt(r.pf[0]/r.n):'—'}</td></tr>`).join('')+
-   `</tbody></table><p class="cmpn">Cộng gộp tất cả tab có nhập số lượng (mỗi tab dùng số vải riêng của lô). Dòng tô đậm là lô đang mở.</p>`;
-  $('#cmp').showModal();
-};
-$('#cmpx').onclick=()=>$('#cmp').close();
-
-/* ---------- Xuất / nhập ---------- */
-$('#exp').onclick=()=>{stash();save();
-  const b=new Blob([JSON.stringify(st,null,1)],{type:'application/json'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(b);
-  a.download='tole-du-lieu-'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)};
-$('#imp').onclick=()=>$('#impf').click();
-$('#impf').onchange=e=>{const file=e.target.files[0];e.target.value='';if(!file)return;
-  const rd=new FileReader();
-  rd.onload=()=>{let o;try{o=JSON.parse(rd.result)}catch(_){alert('File không đọc được.');return}
-    if(!o||typeof o!=='object'||!o.__lots||typeof o.__lots!=='object'||!o.__lots[o.__lot]){alert('File này không phải file dữ liệu xuất từ trang này.');return}
-    if(!confirm('Nhập file sẽ THAY THẾ toàn bộ dữ liệu hiện tại (số lượng, giá đã sửa, các lô). Tiếp tục?'))return;
-    st=o;st.__ltn=1;if(st.__thr==null)st.__thr=10;sheet=DATA[st.__last]?st.__last:KEYS[0];save();$('#thr').value=st.__thr;renderAll()};
-  rd.readAsText(file)};
-
-/* ---------- Ảnh / In ---------- */
-$('#prn').onclick=()=>window.print();
-$('#img').onclick=()=>{
-  const d=cur(),L=st.__lots[st.__lot],lines=[];
-  lines.push({t:'title',v:`Tính lợi nhuận Tole – ${d.cat} – ${d.label}`});
-  lines.push({t:'sub',v:`${L.name}  •  ${new Date().toLocaleDateString('vi-VN')}`});
-  lines.push({t:'kpi',v:`Tổng số bộ: ${$('#k-n').textContent}      Doanh thu: ${$('#k-rev').textContent}`});
-  document.querySelectorAll('#res table').forEach((tb,ti)=>{
-    if(ti===1)lines.push({t:'sub',v:`Giá bán chênh lệch ± ${$('#adj').value} đ/bộ`});
-    tb.querySelectorAll('tr').forEach(tr=>lines.push({t:'row',head:!!tr.querySelector('th'),bold:tr.classList.contains('tot'),
-      c:[...tr.children].map(c=>{const i=c.querySelector('input');return (i?i.value:c.textContent).trim()})}));
-  });
-  const H={title:46,sub:30,kpi:44,row:34},W=760,P=28;
-  const total=P*2+lines.reduce((a,l)=>a+H[l.t],0);
-  const cv=document.createElement('canvas');cv.width=W*2;cv.height=total*2;
-  const x=cv.getContext('2d');x.scale(2,2);x.fillStyle='#fff';x.fillRect(0,0,W,total);
-  const F='system-ui,-apple-system,"Segoe UI",Roboto,sans-serif';
-  let y=P;
-  lines.forEach(l=>{
-    const h=H[l.t];
-    if(l.t==='title'){x.fillStyle='#1e2540';x.font=`700 22px ${F}`;x.textAlign='left';x.fillText(l.v,P,y+30)}
-    else if(l.t==='sub'){x.fillStyle='#7a84a3';x.font=`600 14px ${F}`;x.textAlign='left';x.fillText(l.v,P,y+20)}
-    else if(l.t==='kpi'){x.fillStyle='#f0f3ff';x.fillRect(P,y+4,W-2*P,h-8);x.fillStyle='#1e2540';x.font=`700 17px ${F}`;x.textAlign='left';x.fillText(l.v,P+14,y+28)}
-    else{
-      const n=l.c.length-1,lw=250,cw=(W-2*P-lw)/n;
-      x.strokeStyle='#e8ecf7';x.beginPath();x.moveTo(P,y+h);x.lineTo(W-P,y+h);x.stroke();
-      l.c.forEach((v,i)=>{
-        x.font=`${l.head||l.bold?700:400} ${l.head?13:15}px ${F}`;
-        x.fillStyle=l.head?'#7a84a3':(i>0&&v.startsWith('-')?'#e5484d':'#1e2540');
-        if(i===0){x.textAlign='left';x.fillText(v,P,y+22)}else{x.textAlign='center';x.fillText(v,P+lw+cw*(i-1)+cw/2,y+22)}
-      });
-    }
-    y+=h;
-  });
-  cv.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='loi-nhuan-tole.png';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000)});
-};
-
-/* ---------- Tab ---------- */
 function renderTabs(){
   $('#cats').innerHTML=CATS.map(c=>`<button class="${c==cur().cat?'on':''}" data-c="${c}">${c}</button>`).join('');
   const ks=KEYS.filter(k=>DATA[k].cat==cur().cat);
@@ -290,110 +115,102 @@ $('#cats').onclick=e=>{const c=e.target.dataset.c;if(c)go(KEYS.find(k=>DATA[k].c
 $('#subs').onclick=e=>{const k=e.target.dataset.k;if(k)go(k)};
 
 function renderTable(){
-  const d=cur(),rows=d.rows,s=S(),q=s.q,gi=GI(rows),grouped=!d.flat;let html='',last=null;
+  const d=cur(),rows=d.rows,q=S().q,grouped=d.type==='be'&&!d.flat,gi=GI(rows);let html='',last=null;
+  $('#lastth').textContent=d.type==='be'?'Lợi (sau CP)':'Thành tiền';
   rows.forEach((r,i)=>{
     const g=gi[i];
-    if(grouped&&g!==last){last=g;
-      html+=`<tr class="g" data-g="${g}"><td colspan="8"><div class="gh"><span><span class="arr"></span>${gname(r)}</span><span class="gbs"><span class="gb" data-act="p" title="Cộng/trừ Giá bán/bộ cho cả mục">Giá ±</span><span class="gb" data-act="c" title="Cộng/trừ Chi phí/bộ cho cả mục">CP ±</span><span class="gb" data-act="m" title="Đặt Vải/bộ cho cả mục">Vải/bộ =</span></span></div></td><td class="r" id="gq-${g}"></td><td class="r" id="gp-${g}"></td></tr>`}
+    if(grouped&&g!==last){last=g;html+=`<tr class="g" data-g="${g}"><td colspan="5"><span class="arr"></span>${r[0].replace(/\s*\d+$/,'')}</td><td class="r" id="gq-${g}"></td><td class="r" id="gp-${g}"></td></tr>`}
     html+=`<tr data-i="${i}" data-g="${g}"><td>${r[0]}</td><td class="mutc" id="l${i}"></td>
-    <td><input class="e${s.c[i]!==undefined&&s.c[i]!==''?' chg':''}" type="text" inputmode="numeric" data-e="c" data-i="${i}" value="${fmtI(s.c[i]??r[2])}"></td>
-    <td><input class="e${s.p[i]!==undefined&&s.p[i]!==''?' chg':''}" type="text" inputmode="numeric" data-e="p" data-i="${i}" value="${fmtI(s.p[i]??r[3])}"></td>
-    <td><input class="e mm" type="text" inputmode="decimal" data-e="m" data-i="${i}" value="${fmtD(s.m[i])}" placeholder="0"></td>
-    <td id="lb${i}"></td><td id="lp${i}"></td>
+    <td><input class="e${S().c[i]!==undefined&&S().c[i]!==''?' chg':''}" type="text" inputmode="numeric" data-e="c" data-i="${i}" value="${fmtI(S().c[i]??r[2])}"></td>
+    <td><input class="e${S().p[i]!==undefined&&S().p[i]!==''?' chg':''}" type="text" inputmode="numeric" data-e="p" data-i="${i}" value="${fmtI(S().p[i]??r[3])}"></td>
     <td><input class="q" type="number" min="0" step="any" inputmode="decimal" data-i="${i}" value="${q[i]??''}" placeholder="0"></td>
     <td id="n${i}"></td><td id="p${i}"></td></tr>`;
   });
-  $('#body').innerHTML=html;$('#lop').value=s.lop;
+  $('#body').innerHTML=html;$('#lop').value=S().lop;
 }
 function renderRes(){
-  const f=fab(),adj=S().adj,N=f.length,I=[...Array(N).keys()];
+  const d=cur(),f=fab(),adj=S().adj,be=d.type==='be',N=f.length,I=[...Array(N).keys()];
   const cells=k=>I.map(i=>`<td id="r-${k}${i}"></td>`).join('');
-  const inp=k=>I.map(i=>`<td><input type="text" inputmode="${k===0?'decimal':'numeric'}" data-f="${i}" data-k="${k}" value="${fmtD(f[i][k])}"></td>`).join('');
-  const head=`<tr><th></th>${I.map(i=>`<th>Phương án ${i+1}</th>`).join('')}</tr>`;
+  const inp=(k)=>I.map(i=>`<td><input type="number" data-f="${i}" data-k="${k}" value="${f[i][k]}"></td>`).join('');
+  const head=`<tr><th></th>${I.map(i=>`<th>${be?'Phương án '+(i+1):'Kết quả'}</th>`).join('')}</tr>`;
   const row=(l,k,c)=>`<tr${c==='tot'?' class="tot"':''}><td${c==='m'?' class="mut"':''}>${l}</td>${cells(k)}</tr>`;
   $('#res').innerHTML=`
   <div class="big"><div class="kpi"><small>Tổng số bộ</small><b id="k-n">0</b></div>
-  <div class="kpi"><small>Doanh thu</small><b id="k-rev">0</b></div></div>
+  <div class="kpi"><small>${be?'Doanh thu':'Tổng hàng bán'}</small><b id="k-rev">0</b></div></div>
   <table><thead>${head}</thead><tbody>
   <tr><td>Số lượng vải</td>${inp(0)}</tr>
   <tr><td>Đơn giá vải</td>${inp(1)}</tr>
-  ${row('Tiền vải','fab','m')}${row('Chi phí may','sew','m')}${row('Tổng chi phí','cost','m')}
+  ${row('Tiền vải','fab','m')}
+  ${be?row('Chi phí may','sew','m')+row('Tổng chi phí','cost','m'):row('Tổng hàng bán','hang','m')}
   ${row('LỢI NHUẬN','pf','tot')}${row('Lời 1 bộ','pu')}${row('Tỷ suất (%)','pc')}</tbody></table>
-  <div class="need" id="need"></div>
-  <h3>Giá bán chênh lệch <input type="text" inputmode="numeric" id="adj" value="${fmtD(adj)}"> đ/bộ</h3>
+  <h3>Giá bán chênh lệch <input type="number" id="adj" value="${adj}"> đ/bộ</h3>
   <table><thead>${head}</thead><tbody>
   ${row('Giá bán <b>+</b> → Lợi nhuận','ap')}${row('Lời 1 bộ','apu','m')}${row('Tỷ suất (%)','apc','m')}
   ${row('Giá bán <b>−</b> → Lợi nhuận','am')}${row('Lời 1 bộ','amu','m')}${row('Tỷ suất (%)','amc','m')}</tbody></table>`;
 }
 function calc(){
-  const d=cur(),rows=d.rows,s=S(),q=s.q,f=fab(),adj=+s.adj||0,gi=GI(rows),thr=+st.__thr||0,p1=+f[0][1]||0;
-  let n=0,rev=0,sew=0,need=0;const gq={},gp={};
+  const d=cur(),rows=d.rows,q=S().q,f=fab(),adj=+S().adj||0,be=d.type==='be',gi=GI(rows);
+  let n=0,rev=0,sew=0;const gq={},gp={};
   rows.forEach((r,i)=>{
-    const e=parseFloat(q[i])||0,lop=LOP(i),qty=lop*e,c=COST(i),pr=PRICE(i),p=(pr-c)*qty,g=gi[i],m=parseFloat(s.m[i])||0;
-    n+=qty;rev+=qty*pr;sew+=qty*c;need+=qty*m;
-    $('#l'+i).textContent=lop;
+    const e=parseFloat(q[i])||0,qty=LOP(i)*e,c=COST(i),pr=PRICE(i),p=(pr-c)*qty,g=gi[i];
+    n+=qty;rev+=qty*pr;sew+=qty*c;
+    $('#l'+i).textContent=LOP(i);
     $('#n'+i).textContent=qty?fmt(qty):'';$('#p'+i).textContent=qty?fmt(p):'';
-    const uc=c+m*p1,lb=pr-uc,pc=uc?lb/uc*100:null,k=lb<0?'loss':(pc!=null&&pc<thr?'low':'');
-    const a=$('#lb'+i),b=$('#lp'+i);
-    a.textContent=fmt(lb);b.textContent=pc==null?'—':pc.toFixed(1);a.className=b.className='lc '+k;
-    const tr=$(`tr[data-i="${i}"]`);tr.classList.toggle('act',e>0);tr.classList.toggle('noq',!(e>0));tr.querySelector('input.q').classList.toggle('has',e>0);
+    const tr=$(`tr[data-i="${i}"]`);tr.classList.toggle('act',e>0);tr.querySelector('input.q').classList.toggle('has',e>0);
     gq[g]=(gq[g]||0)+qty;gp[g]=(gp[g]||0)+p;
   });
-  if(!d.flat)for(const g in gq){
-    $('#gq-'+g).textContent=gq[g]?fmt(gq[g])+' bộ':'';$('#gp-'+g).textContent=gp[g]?fmt(gp[g]):'';
-    $(`tr.g[data-g="${g}"]`).classList.toggle('noq',!gq[g]);
-  }
-  $('#k-n').textContent=fmt(n);$('#k-rev').textContent=fmt(rev);
+  if(be&&!d.flat)for(const g in gq){$('#gq-'+g).textContent=gq[g]?fmt(gq[g])+' bộ':'';$('#gp-'+g).textContent=gp[g]?fmt(gp[g]):''}
+  const hang=rev-sew;
+  $('#k-n').textContent=fmt(n);$('#k-rev').textContent=fmt(be?rev:hang);
   const set=(k,i,v,c)=>{const e=$(`#r-${k}${i}`);if(!e)return;e.textContent=v;e.className=c||''};
   const pct=(p,den)=>den?(p/den*100).toFixed(1):'—';
-  const pfs=[];
   f.forEach((fv,i)=>{
-    const fb=(+fv[0]||0)*(+fv[1]||0),cost=fb+sew,pf=rev-cost;pfs.push(pf);
-    set('fab',i,fmt(fb));set('sew',i,fmt(sew));set('cost',i,fmt(cost));
+    const fb=(+fv[0]||0)*(+fv[1]||0),cost=fb+sew;
+    const pf=be?rev-cost:hang-fb,den=be?cost:hang;
+    set('fab',i,fmt(fb));
+    if(be){set('sew',i,fmt(sew));set('cost',i,fmt(cost))}else set('hang',i,fmt(hang));
     set('pf',i,fmt(pf),cls(pf));$(`#r-pf${i}`).style.fontWeight=700;
-    set('pu',i,n?fmt(pf/n):'—');set('pc',i,pct(pf,cost));
-    const pa=pf+n*adj,pm=pf-n*adj;
-    set('ap',i,fmt(pa),cls(pa));set('apu',i,n?fmt(pa/n):'—');set('apc',i,pct(pa,cost));
-    set('am',i,fmt(pm),cls(pm));set('amu',i,n?fmt(pm/n):'—');set('amc',i,pct(pm,cost));
+    set('pu',i,n?fmt(pf/n):'—');set('pc',i,pct(pf,den));
+    const pa=pf+n*adj,pm=pf-n*adj,da=be?den:den+n*adj,dm=be?den:den-n*adj;
+    set('ap',i,fmt(pa),cls(pa));set('apu',i,n?fmt(pa/n):'—');set('apc',i,pct(pa,da));
+    set('am',i,fmt(pm),cls(pm));set('amu',i,n?fmt(pm/n):'—');set('amc',i,pct(pm,dm));
   });
-  lastNeed=Math.round(need*100)/100;
-  const nd=$('#need');
-  if(lastNeed>0){nd.innerHTML=`Vải cần theo định mức: <b>${fmtD(lastNeed)}</b><button class="tb" id="applyneed">Áp dụng vào Số lượng vải</button>`;nd.style.display='block'}
-  else{nd.innerHTML='';nd.style.display='none'}
-  $('#mbar').innerHTML=`<span><small>Tổng bộ</small><b>${fmt(n)}</b></span>`+pfs.map((v,i)=>`<span><small>Lợi nhuận PA${i+1}</small><b class="${cls(v)}">${fmt(v)}</b></span>`).join('');
   filter();
 }
 function filter(){
-  const on=$('#only').checked,d=cur(),open=S().open,qv=norm($('#search').value||'');
+  const on=$('#only').checked,d=cur(),open=S().open;
   const ent=tr=>parseFloat(S().q[tr.dataset.i])>0;
   document.querySelectorAll('#body tr:not(.g)').forEach(tr=>{
-    const hide=(on&&!ent(tr))||(qv&&!norm(d.rows[tr.dataset.i][0]).includes(qv));
-    tr.classList.toggle('hide',!!hide);
-    tr.classList.toggle('col',!d.flat&&!on&&!qv&&!open[tr.dataset.g]);
+    const collapsed=!d.flat&&!on&&!open[tr.dataset.g];
+    tr.classList.toggle('hide',(on&&!ent(tr))||collapsed);
   });
   document.querySelectorAll('#body tr.g').forEach(tr=>{
     const g=tr.dataset.g;
-    const any=[...document.querySelectorAll(`#body tr[data-g="${g}"]:not(.g)`)].some(r=>!r.classList.contains('hide'));
+    const any=[...document.querySelectorAll(`#body tr[data-g="${g}"]:not(.g)`)].some(r=>!on||ent(r));
     tr.classList.toggle('hide',!any);
-    tr.querySelector('.arr').textContent=(on||qv||open[g])?'▾':'▸';
+    tr.querySelector('.arr').textContent=(on||open[g])?'▾':'▸';
   });
 }
-function renderAll(){renderLots();renderTabs();renderTable();renderRes();calc()}
-
-/* ---------- Sự kiện ---------- */
+function renderAll(){renderTabs();renderTable();renderRes();calc()}
 document.addEventListener('input',e=>{
   const t=e.target,s=S();
   if(t.classList.contains('q'))s.q[t.dataset.i]=t.value;
-  else if(t.dataset.f!==undefined)fab()[t.dataset.f][+t.dataset.k]=fmtInput(t,t.dataset.k==='0');
-  else if(t.id==='adj')s.adj=fmtInput(t,false);
+  else if(t.dataset.f!==undefined)fab()[t.dataset.f][t.dataset.k]=t.value;
+  else if(t.id==='adj')s.adj=t.value;
   else if(t.id==='lop')s.lop=t.value;
-  else if(t.dataset.e){const k=t.dataset.e,raw=fmtInput(t,k==='m'),m=k==='c'?s.c:k==='p'?s.p:s.m;
+  else if(t.dataset.e){const m=t.dataset.e==='c'?s.c:s.p;
+    const pos=t.selectionStart,digitsBefore=t.value.slice(0,pos).replace(/\D/g,'').length;
+    const raw=t.value.replace(/\D/g,'');
+    t.value=raw?(+raw).toLocaleString('vi-VN'):'';
+    let np=0,c=0;while(np<t.value.length&&c<digitsBefore){if(/\d/.test(t.value[np]))c++;np++}
+    try{t.setSelectionRange(np,np)}catch(_){}
     if(raw==='')delete m[t.dataset.i];else m[t.dataset.i]=raw;
-    if(k!=='m'){const r=cur().rows[t.dataset.i],orig=k==='c'?r[2]:r[3];t.classList.toggle('chg',raw!==''&&+raw!==orig)}}
+    const r=cur().rows[t.dataset.i],orig=t.dataset.e==='c'?r[2]:r[3];
+    t.classList.toggle('chg',raw!==''&&+raw!==orig);}
   else return;
   save();calc();
 });
-document.addEventListener('focusin',e=>{if(e.target.matches('input.q,input.e,.res input'))e.target.select()});
+document.addEventListener('focusin',e=>{if(e.target.matches('input.q,input.e'))e.target.select()});
 document.addEventListener('keydown',e=>{
   if(!e.target.classList.contains('q'))return;
   const all=[...document.querySelectorAll('input.q')].filter(x=>x.offsetParent),i=all.indexOf(e.target);
@@ -401,47 +218,13 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowUp'){e.preventDefault();(all[i-1]||e.target).focus()}
 });
 document.addEventListener('focusout',e=>{const t=e.target;
-  if(t.dataset&&(t.dataset.e==='c'||t.dataset.e==='p')&&t.value===''){const r=cur().rows[t.dataset.i];t.value=fmtI(t.dataset.e==='c'?r[2]:r[3]);t.classList.remove('chg')}});
-
-function bulk(gb){
-  const d=cur(),s=S(),gi=GI(d.rows),g=+gb.closest('tr.g').dataset.g,idx=gi.map((x,i)=>x===g?i:-1).filter(i=>i>=0),name=gname(d.rows[idx[0]]),act=gb.dataset.act;
-  if(act==='m'){
-    const v=prompt(`Đặt Vải/bộ cho cả mục "${name}" (${idx.length} size).\nCùng đơn vị với "Số lượng vải". Để trống = xóa định mức.`,'');
-    if(v===null)return;
-    if(!v.trim())idx.forEach(i=>delete s.m[i]);
-    else{const x=parseDec(v);if(!isFinite(x)||x<0){alert('Số không hợp lệ.');return}idx.forEach(i=>s.m[i]=String(x))}
-  }else{
-    const lbl=act==='p'?'Giá bán/bộ':'Chi phí/bộ';
-    const v=prompt(`Cộng/trừ ${lbl} cho cả mục "${name}" (${idx.length} size).\nNhập số, âm để giảm. Ví dụ: 1000 hoặc -500`,'1000');
-    if(v===null)return;
-    const x=parseMoney(v);if(!isFinite(x)||!x)return;
-    idx.forEach(i=>{const base=act==='p'?PRICE(i):COST(i);(act==='p'?s.p:s.c)[i]=String(Math.max(0,base+x))});
-  }
-  save();renderTable();calc();
-}
-document.addEventListener('click',e=>{
-  if(e.target.closest('#applyneed')){fab().forEach(fv=>fv[0]=String(lastNeed));save();renderRes();calc();return}
-  if(e.target.closest('#mbar')){window.scrollTo({top:0,behavior:'smooth'});return}
-  const gb=e.target.closest('.gb');if(gb){bulk(gb);return}
-  const tr=e.target.closest('tr.g');if(!tr)return;
-  const o=S().open,g=tr.dataset.g;o[g]=!o[g];save();filter();
-});
+  if(t.dataset&&t.dataset.e&&t.value===''){const r=cur().rows[t.dataset.i];t.value=fmtI(t.dataset.e==='c'?r[2]:r[3]);t.classList.remove('chg')}});
+$('#only').onchange=filter;
+document.addEventListener('click',e=>{const tr=e.target.closest('tr.g');if(!tr)return;
+  const o=S().open,g=tr.dataset.g;o[g]=!o[g];save();filter()});
 $('#toggleall').onclick=()=>{const gs=[...new Set(GI(cur().rows))],o=S().open,allOpen=gs.every(g=>o[g]);
   gs.forEach(g=>o[g]=!allOpen);save();filter()};
-$('#only').onchange=filter;
-$('#search').oninput=filter;
-$('#thr').value=st.__thr;
-$('#thr').oninput=e=>{st.__thr=+e.target.value||0;save();calc()};
 $('#resetp').onclick=()=>{const s=S();s.c={};s.p={};s.lop='';save();renderTable();calc()};
-$('#clear').onclick=()=>{
-  const d=cur(),s=S(),gi=GI(d.rows),open=s.open;let idx=d.rows.map((_,i)=>i),label;
-  if(d.flat)label='tất cả loại đồ';
-  else{const gs=[...new Set(gi)].filter(g=>open[g]);
-    if(gs.length){idx=idx.filter(i=>open[gi[i]]);label='các mục đang mở: '+gs.map(g=>gname(d.rows[gi.indexOf(g)])).join(', ')}
-    else label='toàn bộ tab (chưa có mục nào đang mở)'}
-  const n=idx.filter(i=>parseFloat(s.q[i])>0).length;
-  if(!n){alert('Không có số nào để xóa.');return}
-  if(confirm(`Xóa số "Xuất hiện" của ${label} (${n} dòng)?`)){idx.forEach(i=>delete s.q[i]);save();renderTable();calc()}
-};
+$('#clear').onclick=()=>{if(confirm(`Xóa toàn bộ số "Xuất hiện" của ${cur().cat} – ${cur().label}?`)){S().q={};save();renderTable();calc()}};
 renderAll();
 </script></body></html>
